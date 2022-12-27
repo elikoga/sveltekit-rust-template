@@ -59,11 +59,11 @@ if [ $debug -eq 1 ]; then
 fi
 
 # Remove unneeded files
-pushd "$root_path"
+pushd "$root_path" || exit 1 > /dev/null
 cd "$root_path/backend"
 cargo clean
 echo "Removed backend/target"
-popd
+popd || exit 1 > /dev/null
 
 # Rename project in Cargo.toml
 sed -i "s/$old_project_name/$new_project_name/g" "$root_path/backend/Cargo.toml"
@@ -72,7 +72,10 @@ sed -i "s/$old_project_name/$new_project_name/g" "$root_path/backend/Cargo.toml"
 sed -i "s/$old_project_name/$new_project_name/g" "$root_path/frontend/package.json"
 
 # List all files containing the old project name
-files_to_rename=$(grep -ril "$old_project_name" "$root_path" || true)
+files_to_modify=$(grep -ril "$old_project_name" "$root_path" || true)
+
+# List all filenames containing the old project name
+files_to_rename=$(find "$root_path" -type f -name "*$old_project_name*" | grep -v "$root_path/current_project_name.txt" || true)
 
 # Rename project in current_project_name.txt
 printf "%s" "$new_project_name" > "$root_path/current_project_name.txt"
@@ -81,5 +84,7 @@ printf "%s" "$new_project_name" > "$root_path/current_project_name.txt"
 echo "Renamed project from $old_project_name to $new_project_name in:"
 echo "backend/Cargo.toml"
 echo "frontend/package.json"
-echo "You may need to rename the project in other files:"
+echo "You may need to modify the project in other files:"
+echo "$files_to_modify"
+echo "You may need to rename the following files:"
 echo "$files_to_rename"

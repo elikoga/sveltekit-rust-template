@@ -6,3 +6,14 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+axum = "0.6.1"
+dotenvy = "0.15.6"
+rand = "0.8.5"
+serde = { version = "1.0.151", features = ["derive"] }
+serde_json = "1.0.91"
+tokio = { version = "1.23.0", features = ["full"] }
+tower = { version = "0.4.13", features = ["full"] }
+tower-http = { version = "0.3.5", features = ["full"] }
+tracing-subscriber = "0.3.16"
+utoipa = { version = "2.4.2", features = ["axum_extras"] }
+utoipa-swagger-ui = { version = "3.0.1", features = ["axum"] }

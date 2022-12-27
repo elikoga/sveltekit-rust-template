@@ -1,2 +1,13 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+  import { invalidateAll } from '$app/navigation';
+  import type { PageData } from './$types';
+
+  export let data: PageData;
+</script>
+
+<h1>sveltekit-rust-frontend</h1>
+
+<p>Health: {data.health.status}</p>
+<p>Random: {data.random.random}</p>
+
+<a href="."><button on:click={invalidateAll}>Reload</button></a>

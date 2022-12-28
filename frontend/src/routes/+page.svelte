@@ -5,7 +5,7 @@
   export let data: PageData;
 </script>
 
-<h1>sveltekit-rust-frontend</h1>
+<h1>sveltekit-rust-auth-frontend</h1>
 
 <p>Health: {data.health.status}</p>
 <p>Random: {data.random.random}</p>

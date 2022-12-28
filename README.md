@@ -1,4 +1,4 @@
-# SvelteKit-Rust
+# SvelteKit-Rust Auth
 
 This is a template for creating a SvelteKit app with Rust backend.
 
@@ -68,7 +68,7 @@ cd backend
 cargo build --release
 ```
 
-This will build the backend into the `backend/target/release` directory. You may then deploy the resulting binary `backend/target/release/sveltekit-rust-backend` to your server. And start the backend with:
+This will build the backend into the `backend/target/release` directory. You may then deploy the resulting binary `backend/target/release/sveltekit-rust-auth-backend` to your server. And start the backend with:
 
 ```bash
 ./svetlekit-rust-backend

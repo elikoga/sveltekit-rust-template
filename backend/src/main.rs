@@ -13,7 +13,7 @@ mod handlers;
 #[openapi(
         paths(handlers::get_health, handlers::get_random),
         components(schemas(handlers::Health, handlers::Random)),
-        tags((name = "sveltekit-rust", description = "sveltekit-rust API")),
+        tags((name = "sveltekit-rust-auth", description = "sveltekit-rust-auth API")),
     )]
 struct ApiDoc;
 

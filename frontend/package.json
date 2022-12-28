@@ -1,5 +1,5 @@
 {
-  "name": "sveltekit-rust-frontend",
+  "name": "sveltekit-rust-auth-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {

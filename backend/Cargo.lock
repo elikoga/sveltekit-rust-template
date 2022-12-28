@@ -937,7 +937,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "sveltekit-rust-backend"
+name = "sveltekit-rust-auth-backend"
 version = "0.1.0"
 dependencies = [
  "axum",

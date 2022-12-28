@@ -57,7 +57,7 @@ This will build the frontend into the `frontend/build` directory. You may then d
 node build
 ```
 
-Set the environment variables as described in `frontend/.env.local`.
+Set the environment variables as described in `frontend/.env.example` or (for development) copy `frontend/.env.example` to `frontend/.env.local`.
 
 ### Backend
 
